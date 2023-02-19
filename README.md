@@ -25,7 +25,7 @@ The following steps outline the workflow for generating rules.xml with the ocRul
 Explanation of the different Excel cells.
 
 - **EVENT_OID**
-If the CRF is assigned to an Event in Openclinica, the EVENT_OID must be entered here. If the Event has already been createt: -> Build Study -> in column Create Event Definitions click the "view" -> look for **OID**)
+If the CRF is assigned to an Event in Openclinica, the EVENT_OID must be entered here. If the Event has already been created: -> Build Study -> in column Create Event Definitions click the "view" -> look for **OID**.
 
 - **CRF_OID**
 The CRF_OID is created when uploading the CRF to the Openclinica platform and can be found under: Tasks -> CRFs -> *look for the CRF in question and then in the column - **CFR_OID**.*
@@ -42,26 +42,25 @@ The item to which the rule should be applied. If left empty, the rule will be ap
 - **VAL**
     Requires a value or a logical opreator + value.
     Currently supported opreators include: 
-    1. greater than - gt(int) or gt(real)
-    2. less than - lt(int) or lt(real)
-    3. range - range(int1, int2) or range(real1, real2)
-    4. gte(int) or gte(real)
-    5. lte(int) or lte(real)
-    6. ne(int) or ne(real)
-    7. eq(int) or eq(real)
-
+    - greater than - gt(int) or gt(real)
+    - less than - lt(int) or lt(real)
+    - range - range(int1, int2) or range(real1, real2)
+    - gte(int) or gte(real)
+    - lte(int) or lte(real)
+    - ne(int) or ne(real)
+    - eq(int) or eq(real)
 
 - **MIN**
-Minimum value expected from the item
+Minimum value expected from the item.
 
 - **MAX**
-Maximum value expected from the item
+Maximum value expected from the item.
 
 - **RULE_ERROR_MESSAGE**
-Error message if the given rule is violated. $n is used to indicate the item whose rule was broken
+Error message if the given rule is violated. "$n" is used to indicate the item whose rule was violated.
 
 - **GROUP**
-The group of the item must be named here. Additionally it can be used to limit a rule to single rows if the **GROUP** is defined as GRID (**GROUP**[*row*]). 
+The group of the item must be named here. Additionally it can be used to limit a rule to a single row if the **GROUP** is defined as GRID (**GROUP**[*row*]).
 
 ## Compiling from Source ##
 If you want to compile the ocRuleCompiler yourself, you'll need git, maven, and java >= 1.8. Follow these steps:
