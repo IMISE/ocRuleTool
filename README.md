@@ -81,7 +81,7 @@ Maximum value expected from the item.
 Error message if the given rule is violated. "$n" is used to indicate the item whose rule was violated.
 
 - **GROUP**
-The group of the item must be named here. Additionally it can be used to limit a rule to a single row if the **GROUP** is defined as GRID (**GROUP**[*row*]).
+The group of the item must be named here. Additionally it can be used to limit a rule to a single row `**GROUP**[*row*]` if the **GROUP** is defined as GRID.
 
 ## Compiling from Source ##
 If you want to compile the ocRuleCompiler yourself, you'll need git, maven, and java >= 1.8. Follow these steps:
