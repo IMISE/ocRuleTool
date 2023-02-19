@@ -21,11 +21,49 @@ The following steps outline the workflow for generating rules.xml with the ocRul
 5. Generate rules.xml with the ocRuleCompiler.
 6. Upload the rules.xml to OpenClinica/LibreClinica by navigating to Tasks -> Build Study -> in column Create Rules click the "+" -> upload the rules.xml file.
 
-## Usage ##
-Instructions for using the ocRuleCompiler.
+## Explaination ##
+Explanation of the different Excel cells.
+
+- **EVENT_OID**
+If the CRF is assigned to an Event in Openclinica, the EVENT_OID must be entered here. If the Event has already been createt: -> Build Study -> in column Create Event Definitions click the "view" -> look for **OID**)
+
+- **CRF_OID**
+The CRF_OID is created when uploading the CRF to the Openclinica platform and can be found under: Tasks -> CRFs -> *look for the CRF in question and then in the column - **CFR_OID**.*
+
+- **UNGROUPED_OID**
+
+- **ITEM_NAME**
+The item to which the rule should be applied. If left empty, the rule will be applied to the item above.
+
+- **RULE_TYPE**
+
+- **COMP**
+
+- **VAL**
+    Requires a value or a logical opreator + value.
+    Currently supported opreators include: 
+    1. greater than - gt(int) or gt(real)
+    2. less than - lt(int) or lt(real)
+    3. range - range(int1, int2) or range(real1, real2)
+    4. gte(int) or gte(real)
+    5. lte(int) or lte(real)
+    6. ne(int) or ne(real)
+    7. eq(int) or eq(real)
 
 
-### Compiling from Source ###
+- **MIN**
+Minimum value expected from the item
+
+- **MAX**
+Maximum value expected from the item
+
+- **RULE_ERROR_MESSAGE**
+Error message if the given rule is violated. $n is used to indicate the item whose rule was broken
+
+- **GROUP**
+The group of the item must be named here. Additionally it can be used to limit a rule to single rows if the **GROUP** is defined as GRID (**GROUP**[*row*]). 
+
+## Compiling from Source ##
 If you want to compile the ocRuleCompiler yourself, you'll need git, maven, and java >= 1.8. Follow these steps:
 
 1. Clone the repository by running `git clone https://fmeineke@github.com/fmeineke/ocRuleCompiler.git`.
@@ -33,10 +71,10 @@ If you want to compile the ocRuleCompiler yourself, you'll need git, maven, and 
 3. Run `mvn clean package -Dmaven.test.skip=true` to build target/ocRuleCompiler.jar and copy dependencies to target/lib.
 4. Start the batch shell with `java -jar target/ocRuleCompiler-1.0.jar`.
 
-### Notes ###
+## Notes ##
 Here are some additional notes to keep in mind when using the ocRuleCompiler:
 
 - Standard encoding is ISO-8859-1, which supports Ä,Ö,Ü, and other special characters.
 - If you want to encode the rules.xml in UTF-8, add -utf at the end of the command.
 - With UTF-8 encoding, umlauts may not be displayed properly in OpenClinica/LibreClinica.
-- If you need help with the CRF.xls, you can find an example under src/test/resources.
+
