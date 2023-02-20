@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<!--Generator: ocRuleCompiler version 2023-01-23 (C) F. Meineke, F. Ulbrich
+    Inputfile: src/test/resources/Demo_v3.9.xls
+         User: florian
+         Date: 02.02.2023, 11:34:58
+--><RuleImport>
+   <RuleAssignment>
+      <Target Context="OC_RULES_V1">SE_AUSSCHLUSS.F_DEMORULECRF.IG_DEMOR_UNGROUPED.I_DEMOR_OP</Target>
+      <RuleRef OID="I_DEMOR_OP_1">
+         <DiscrepancyNoteAction IfExpressionEvaluates="true">
+            <Message>OP muss nach Aufnahme liegen. (äöüû)</Message>
+         </DiscrepancyNoteAction>
+      </RuleRef>
+      <RuleRef OID="I_DEMOR_OP_2">
+         <DiscrepancyNoteAction IfExpressionEvaluates="true">
+            <Message>OP Termin ist Pflicht (wie Required).</Message>
+         </DiscrepancyNoteAction>
+      </RuleRef>
+   </RuleAssignment>
+   <RuleAssignment>
+      <Target Context="OC_RULES_V1">SE_AUSSCHLUSS.F_DEMORULECRF.IG_DEMOR_UNGROUPED.I_DEMOR_ENTLASSUNG</Target>
+      <RuleRef OID="I_DEMOR_ENTLASSUNG_1">
+         <DiscrepancyNoteAction IfExpressionEvaluates="true">
+            <Message>"Entlassung" muss mind 2 Tage nach OP liegen.</Message>
+         </DiscrepancyNoteAction>
+      </RuleRef>
+   </RuleAssignment>
+   <RuleAssignment>
+      <Target Context="OC_RULES_V1">SE_AUSSCHLUSS.F_DEMORULECRF.IG_DEMOR_UNGROUPED.I_DEMOR_MEDIAORB</Target>
+      <RuleRef OID="I_DEMOR_MEDIAORB_1">
+         <DiscrepancyNoteAction IfExpressionEvaluates="true">
+            <Message>"MediAorB" bitte angeben.</Message>
+         </DiscrepancyNoteAction>
+      </RuleRef>
+   </RuleAssignment>
+   <RuleAssignment>
+      <Target Context="OC_RULES_V1">SE_AUSSCHLUSS.F_DEMORULECRF.IG_DEMOR_UNGROUPED.I_DEMOR_UNITMEDIA</Target>
+      <RuleRef OID="I_DEMOR_UNITMEDIA_1">
+         <DiscrepancyNoteAction IfExpressionEvaluates="true">
+            <Message>"UnitMediA" bitte angeben.</Message>
+         </DiscrepancyNoteAction>
+      </RuleRef>
+   </RuleAssignment>
+   <RuleAssignment>
+      <Target Context="OC_RULES_V1">SE_AUSSCHLUSS.F_DEMORULECRF.IG_DEMOR_UNGROUPED.I_DEMOR_DOSISMEDIA</Target>
+      <RuleRef OID="I_DEMOR_DOSISMEDIA_1">
+         <DiscrepancyNoteAction IfExpressionEvaluates="true">
+            <Message>"DosisMediA" bitte angeben.</Message>
+         </DiscrepancyNoteAction>
+      </RuleRef>
+      <RuleRef OID="I_DEMOR_DOSISMEDIA_2">
+         <DiscrepancyNoteAction IfExpressionEvaluates="true">
+            <Message>"DosisMediA" muss zwischen 50-250 mmol liegen.</Message>
+         </DiscrepancyNoteAction>
+      </RuleRef>
+      <RuleRef OID="I_DEMOR_DOSISMEDIA_3">
+         <DiscrepancyNoteAction IfExpressionEvaluates="true">
+            <Message>"DosisMediA" muss zwischen 30-70 mll liegen.</Message>
+         </DiscrepancyNoteAction>
+      </RuleRef>
+   </RuleAssignment>
+   <RuleAssignment>
+      <Target Context="OC_RULES_V1">SE_AUSSCHLUSS.F_DEMORULECRF.IG_DEMOR_UNGROUPED.I_DEMOR_DOSISMEDIB</Target>
+      <RuleRef OID="I_DEMOR_DOSISMEDIB_1">
+         <DiscrepancyNoteAction IfExpressionEvaluates="true">
+            <Message>"DosisMediB" bitte angeben.</Message>
+         </DiscrepancyNoteAction>
+      </RuleRef>
+      <RuleRef OID="I_DEMOR_DOSISMEDIB_2">
+         <DiscrepancyNoteAction IfExpressionEvaluates="true">
+            <Message>"DosisMediB" bitte nicht angeben.</Message>
+         </DiscrepancyNoteAction>
+      </RuleRef>
+   </RuleAssignment>
+   <RuleAssignment>
+      <Target Context="OC_RULES_V1">SE_AUSSCHLUSS.F_DEMORULECRF.IG_DEMOR_MEDIGROUP[1].I_DEMOR_MEDIC</Target>
+      <RuleRef OID="I_DEMOR_MEDIC_1_1">
+         <DiscrepancyNoteAction IfExpressionEvaluates="true">
+            <Message>Bitte mindestens ein Medikament angeben.</Message>
+         </DiscrepancyNoteAction>
+      </RuleRef>
+   </RuleAssignment>
+   <RuleAssignment>
+      <Target Context="OC_RULES_V1">SE_AUSSCHLUSS.F_DEMORULECRF.IG_DEMOR_MEDIGROUP.I_DEMOR_DOSISMEDIC</Target>
+      <RuleRef OID="I_DEMOR_DOSISMEDIC_1">
+         <DiscrepancyNoteAction IfExpressionEvaluates="true">
+            <Message>Bitte Dosis angeben.</Message>
+         </DiscrepancyNoteAction>
+      </RuleRef>
+      <RuleRef OID="I_DEMOR_DOSISMEDIC_2">
+         <DiscrepancyNoteAction IfExpressionEvaluates="true">
+            <Message>"DosisMediC" muss zwischen 10-100 liegen.</Message>
+         </DiscrepancyNoteAction>
+      </RuleRef>
+   </RuleAssignment>
+   <RuleDef Name="I_DEMOR_OP1" OID="I_DEMOR_OP_1">
+      <Description>OP muss nach Aufnahme liegen. (äöüû)</Description>
+      <Expression>I_DEMOR_OP lt I_DEMOR_AUFNAHME</Expression>
+   </RuleDef>
+   <RuleDef Name="I_DEMOR_OP2" OID="I_DEMOR_OP_2">
+      <Description>OP Termin ist Pflicht (wie Required).</Description>
+      <Expression>I_DEMOR_OP eq ""</Expression>
+   </RuleDef>
+   <RuleDef Name="I_DEMOR_ENTLASSUNG1" OID="I_DEMOR_ENTLASSUNG_1">
+      <Description>"Entlassung" muss mind 2 Tage nach OP liegen.</Description>
+      <Expression>I_DEMOR_ENTLASSUNG lt I_DEMOR_OP or I_DEMOR_ENTLASSUNG - I_DEMOR_OP lt 2</Expression>
+   </RuleDef>
+   <RuleDef Name="I_DEMOR_MEDIAORB1" OID="I_DEMOR_MEDIAORB_1">
+      <Description>"MediAorB" bitte angeben.</Description>
+      <Expression>I_DEMOR_MEDIAORB eq ""</Expression>
+   </RuleDef>
+   <RuleDef Name="I_DEMOR_UNITMEDIA1" OID="I_DEMOR_UNITMEDIA_1">
+      <Description>"UnitMediA" bitte angeben.</Description>
+      <Expression>I_DEMOR_UNITMEDIA eq "" and I_DEMOR_MEDIAORB eq "1"</Expression>
+   </RuleDef>
+   <RuleDef Name="I_DEMOR_DOSISMEDIA1" OID="I_DEMOR_DOSISMEDIA_1">
+      <Description>"DosisMediA" bitte angeben.</Description>
+      <Expression>I_DEMOR_DOSISMEDIA eq "" and I_DEMOR_MEDIAORB eq "1"</Expression>
+   </RuleDef>
+   <RuleDef Name="I_DEMOR_DOSISMEDIA2" OID="I_DEMOR_DOSISMEDIA_2">
+      <Description>"DosisMediA" muss zwischen 50-250 mmol liegen.</Description>
+      <Expression>I_DEMOR_UNITMEDIA eq "1" and ( I_DEMOR_DOSISMEDIA lt 50 or I_DEMOR_DOSISMEDIA gt 250 )</Expression>
+   </RuleDef>
+   <RuleDef Name="I_DEMOR_DOSISMEDIA3" OID="I_DEMOR_DOSISMEDIA_3">
+      <Description>"DosisMediA" muss zwischen 30-70 mll liegen.</Description>
+      <Expression>I_DEMOR_UNITMEDIA eq "2" and ( I_DEMOR_DOSISMEDIA lt 30 or I_DEMOR_DOSISMEDIA gt 70 )</Expression>
+   </RuleDef>
+   <RuleDef Name="I_DEMOR_DOSISMEDIB1" OID="I_DEMOR_DOSISMEDIB_1">
+      <Description>"DosisMediB" bitte angeben.</Description>
+      <Expression>I_DEMOR_DOSISMEDIB eq "" and I_DEMOR_MEDIAORB eq "2"</Expression>
+   </RuleDef>
+   <RuleDef Name="I_DEMOR_DOSISMEDIB2" OID="I_DEMOR_DOSISMEDIB_2">
+      <Description>"DosisMediB" bitte nicht angeben.</Description>
+      <Expression>I_DEMOR_DOSISMEDIB ne "" and I_DEMOR_MEDIAORB ne "2"</Expression>
+   </RuleDef>
+   <RuleDef Name="I_DEMOR_MEDIC1_1" OID="I_DEMOR_MEDIC_1_1">
+      <Description>Bitte mindestens ein Medikament angeben.</Description>
+      <Expression>I_DEMOR_MEDIC eq ""</Expression>
+   </RuleDef>
+   <RuleDef Name="I_DEMOR_DOSISMEDIC1" OID="I_DEMOR_DOSISMEDIC_1">
+      <Description>Bitte Dosis angeben.</Description>
+      <Expression>I_DEMOR_DOSISMEDIC eq "" and I_DEMOR_MEDIC ne ""</Expression>
+   </RuleDef>
+   <RuleDef Name="I_DEMOR_DOSISMEDIC2" OID="I_DEMOR_DOSISMEDIC_2">
+      <Description>"DosisMediC" muss zwischen 10-100 liegen.</Description>
+      <Expression>I_DEMOR_DOSISMEDIC lt 10 or I_DEMOR_DOSISMEDIC gt 100</Expression>
+   </RuleDef>
+</RuleImport>
