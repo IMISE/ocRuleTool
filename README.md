@@ -21,7 +21,7 @@ The following steps outline the workflow for generating rules.xml with the ocRul
 5. Generate rules.xml with the ocRuleCompiler.
 6. Upload the rules.xml to OpenClinica/LibreClinica by navigating to Tasks -> Build Study -> in column Create Rules click the "+" -> upload the rules.xml file.
 
-## Explaination ##
+## Explanation ##
 Explanation of the different Excel cells.
 
 - **EVENT_OID**
@@ -52,10 +52,10 @@ The item to which the rule should be applied. If left empty, the rule will be ap
 
 - **COMP**
 Here the comparison data point for all dependent Statments (after,before...) is needed, normally in the form of an item. If the **RULE_TYPE** expression is selected you can also define your own statments in the form of `[ITEM] [operator] [value]`.
-In addition, it can be treated as an if statment where the item named in **COMP** must first satisfy the condition given by an operator in **VAL** to validate the item named in **ITEM_NAME**.
+In addition, it can be treated as an if statement where the item named in **COMP** must first satisfy the condition given by an operator in **VAL** to validate the item named in **ITEM_NAME**.
 
 - **VAL**
-Used to validate the COMP statement. Requires a value or a logical opreator + value. Can also be used to create a statement if there is only a item given in **COMP**. Currently supported opreators include:
+Used to validate the COMP statement. Requires a value or a logical operator + value. Can also be used to create a statement if there is only a item given in **COMP**. Currently supported opreators include:
 
     - greater than - gt(int) or gt(real) 
 
