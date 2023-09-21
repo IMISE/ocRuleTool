@@ -1,5 +1,5 @@
 # ocRuleTool
-The ocRuleTool generate XML rules for OpenClinica/LibreClinica CDMS based on Excel templates.
+The ocRuleTool generates XML rules for OpenClinica/LibreClinica CDMS based on Excel templates.
 
 ## Purpose ##
 This repository contains the ocRuleCompiler, a small Java app that facilitates the generation of rules for OpenClinica/LibreClinica CDISC-ODM management. Specifically, it generates rules.xml from CRF descriptions.
