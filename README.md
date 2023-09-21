@@ -9,7 +9,7 @@ To set up the ocRuleCompiler, follow these steps:
 
 1. Download the latest release (.jar) for easy setup.
 2. Navigate to the directory with the .jar file using your terminal.
-3. Run the command `java -jar ocRuleCompiler2-2-shaded.jar /path/to/your/CRF.xls` to generate rules.xml.
+3. Run the command `java -jar ocRuleCompiler.jar /path/to/your/CRF.xls` to generate rules.xml.
 
 ## Workflow ##
 The following steps outline the workflow for generating rules.xml with the ocRuleCompiler:

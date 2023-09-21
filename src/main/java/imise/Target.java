@@ -48,7 +48,7 @@ class Target {
 		Document doc = ruleImport.getOwnerDocument();
 		int i = 1;
 		for (Rule rule : ruleList) {
-			String ruleName = OCRead.item_prefix + targetItem.getName().toUpperCase() + i;
+			String ruleName = OcRuleTool.item_prefix + targetItem.getName().toUpperCase() + i;
 			String ruleOID = targetItem.getOID().toUpperCase() + "_" + i;
 			i++;
 			if (targetInSubgroup && !compInSubgroup) {
@@ -213,6 +213,6 @@ class Target {
 	}
 
 	private boolean isAnsi() {
-		return encoding.equals(OCRead.ENC_ISO_8859_1);
+		return encoding.equals(OcRuleTool.ENC_ISO_8859_1);
 	}
 }

@@ -19,7 +19,7 @@ public class OCReadTest {
     @Test
     public void completeTest() throws IOException {
 
-        OCRead ocRead = new OCRead();
+        OcRuleTool ocRead = new OcRuleTool();
         ocRead.infile = "src/test/resources/Demo_v3.9.xls";
         String[] args = {};
         ocRead.start(args);

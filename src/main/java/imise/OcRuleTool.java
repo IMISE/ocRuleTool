@@ -34,7 +34,7 @@ import org.w3c.dom.Element;
 /**
  * Main class that reads an xls file and generates an xml file for the rules and items ready to upload to Open Clinica
  */
-public class OCRead {
+public class OcRuleTool {
 
 	static final String newline = System.getProperty("line.separator");
 	static final String ENC_ISO_8859_1 = "ISO-8859-1";
@@ -44,7 +44,7 @@ public class OCRead {
 	 * 2013-04-09 (C) F. Meineke, 2013-09-25 F. Rissner
 	 * 2016-06-02 (C) F. Meineke
 	 */
-	static final String version = "ocRuleCompiler version 2023-02-10 (C) F. Meineke, F. Ulbrich";
+	static final String version = "ocRuleTool version 2023-09-20 (C) F. Meineke, F. Ulbrich";
 
 	/**
 	 * Path of input file (.xls)
@@ -104,7 +104,7 @@ public class OCRead {
 
 
     public static void main(String[] args) {
-		new OCRead().start(args);
+		new OcRuleTool().start(args);
 	}
 
 	/**
@@ -416,8 +416,8 @@ public class OCRead {
 	 * Command prompt to show available options to the user
 	 */
 	void printCommandLineOptionsToConsole() {
-		log.log("usage: ocread "
-				+ "\n  [-utf|latin]   : output xml enconding, default is "
+		log.log("usage: "
+				+ "\n  [-utf|latin]   : output xml encoding, default is "
 				+ encoding
 				+ "\n  [-nowarnings]  : suppresses warnings"
 				+ "\n  [-o <name>.xml : output, default is <name>-rules.xml, '-' is stdout"
