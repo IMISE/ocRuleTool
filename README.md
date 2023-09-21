@@ -84,7 +84,7 @@ Error message if the given rule is violated. "$n" is used to indicate the item w
 The group of the item must be named here. Additionally it can be used to limit a rule to a single row `**GROUP**[*row*]` if the **GROUP** is defined as GRID.
 
 ## Compiling from Source ##
-If you want to compile the ocRuleCompiler yourself, you'll need git, maven, and java >= 1.8. Follow these steps:
+If you want to compile the ocRuleTool yourself, you'll need git, maven, and java >= 1.8. Follow these steps:
 
 1. Clone the repository by running `git clone https://fmeineke@github.com/fmeineke/ocRuleCompiler.git`.
 2. Change your working directory to `ocRuleCompiler`.
