@@ -86,9 +86,9 @@ The group of the item must be named here. Additionally it can be used to limit a
 ## Compiling from Source ##
 If you want to compile the ocRuleTool yourself, you'll need git, maven, and java >= 1.8. Follow these steps:
 
-1. Clone the repository by running `git clone https://fmeineke@github.com/fmeineke/ocRuleCompiler.git`.
-2. Change your working directory to `ocRuleCompiler`.
-3. Run `mvn clean package -Dmaven.test.skip=true` to build target/ocRuleTool.jar and copy dependencies to target/lib.
+1. Clone the repository by running `git clone https://github.com/IMISE/ocRuleTool.git`.
+2. Change your working directory to `ocRuleTool`.
+3. Run `mvn clean package -Dmaven.test.skip=true` to build target/ocRuleTool.jar.
 4. Start the batch shell with `java -jar target/ocRuleTool.jar`.
 
 ## Notes ##
