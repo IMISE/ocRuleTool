@@ -5,11 +5,12 @@ The ocRuleTool generate XML rules for OpenClinica/LibreClinica CDMS based on Exc
 This repository contains the ocRuleCompiler, a small Java app that facilitates the generation of rules for OpenClinica/LibreClinica CDISC-ODM management. Specifically, it generates rules.xml from CRF descriptions.
 
 ## Setup ##
-To set up the ocRuleCompiler, follow these steps:
+To set up the ocRuleTool, follow these steps:
 
-1. Download the latest release (.jar) for easy setup.
-2. Navigate to the directory with the .jar file using your terminal.
-3. Run the command `java -jar ocRuleCompiler.jar /path/to/your/CRF.xls` to generate rules.xml.
+1. (Download the latest release (.jar) for easy setup.)
+2. Build the source: Download sources, having Java > 1.17 and maven installed: mvn install -DskipTests
+3. Navigate to the directory with the .jar file using your terminal.
+4. Run the command `java -jar ocRuleTool.jar /path/to/your/CRF.xls` to generate rules.xml.
 
 ## Workflow ##
 The following steps outline the workflow for generating rules.xml with the ocRuleCompiler:
@@ -18,7 +19,7 @@ The following steps outline the workflow for generating rules.xml with the ocRul
 2. For more information on specifying rules, refer to the OpenClinica Docs at https://docs.openclinica.com/3-1/rules/.
 3. Upload the CRF to your OpenClinica/LibreClinica platform by navigating to Tasks -> Build Study -> in column Create CRF click the "+" -> upload the .xls file.
 4. Retrieve the generated OIDs and add them to the Excel file.
-5. Generate rules.xml with the ocRuleCompiler.
+5. Generate rules.xml with the ocRuleTool.
 6. Upload the rules.xml to OpenClinica/LibreClinica by navigating to Tasks -> Build Study -> in column Create Rules click the "+" -> upload the rules.xml file.
 
 ## Explanation ##
