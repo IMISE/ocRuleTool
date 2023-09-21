@@ -7,8 +7,7 @@ This repository contains the ocRuleCompiler, a small Java app that facilitates t
 ## Setup ##
 To set up the ocRuleTool, follow these steps:
 
-1. Download the ocRuleTool.jar for easy setup 
-2. or Build the source: Download sources, having Java > 1.17 and maven installed: mvn install -DskipTests
+1. Download the ocRuleTool.jar for easy setup  (or build yourself!)
 3. Navigate to the directory with the .jar file using your terminal.
 4. Run the command `java -jar ocRuleTool.jar /path/to/your/CRF.xls` to generate rules.xml.
 
@@ -89,8 +88,8 @@ If you want to compile the ocRuleCompiler yourself, you'll need git, maven, and 
 
 1. Clone the repository by running `git clone https://fmeineke@github.com/fmeineke/ocRuleCompiler.git`.
 2. Change your working directory to `ocRuleCompiler`.
-3. Run `mvn clean package -Dmaven.test.skip=true` to build target/ocRuleCompiler.jar and copy dependencies to target/lib.
-4. Start the batch shell with `java -jar target/ocRuleCompiler-1.0.jar`.
+3. Run `mvn clean package -Dmaven.test.skip=true` to build target/ocRuleTool.jar and copy dependencies to target/lib.
+4. Start the batch shell with `java -jar target/ocRuleTool.jar`.
 
 ## Notes ##
 Here are some additional notes to keep in mind when using the ocRuleCompiler:
